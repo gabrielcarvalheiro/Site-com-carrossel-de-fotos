@@ -1,0 +1,136 @@
+body{ /* CONFIGURANDO A PAGINA */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+.logo{ /* LOGO CR.CODE*/
+    color: #fff;
+    position: relative;
+    right: -3%;
+    font-size:250%;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    cursor: default;
+}
+nav { /* CABECALHO */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #23232e;
+    height: 8vh;
+}
+
+a { /* ESTILIZACAO DAS ANCORAS */
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover{ /* ANIMACAO NOS LINKS */
+    opacity: 0.7;
+    color: #a360f0;
+}
+.ancoras { /* POSICIONAMENTO DE ANCORA 1*/
+    position: relative;
+    list-style: none;
+    display: flex;
+}
+.ancoras li{ /* POSICIONAMENTO DE ANCORA 2*/
+    position: relative;
+    right: 35%;
+    font-size: 130%;
+    letter-spacing: 3px;
+    margin-left: 50px;
+}
+.content{ /* POSICIONAMENTO DO CARROSEL */
+    height: 80%;
+    width: 65%;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.navigation{ /* POSICIONAMENTO DOS BOTOES DE FOTO */
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+.bar{ /* CRIACAO DAS BARRAS DE ESCOLHA DE FOTO */
+    width: 55px;
+    height: 13px;
+    border: 3px solid #fff;
+    margin: 7px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .4s;
+    appearance: none;
+    position: relative;
+    top: 20px;
+}
+.bar:hover{ /* ANIMACAO DA BARRA */
+    background-color: #fff;
+}
+input{ /* APARECER UMA FOTO POR VEZ */
+    display: none;
+}
+.slides { /* ENCAIXE DAS FOTOS */
+    display: flex;
+    width: 500%;
+    height: 100%;
+}
+.slide { /* ANIMACAO DE TRANSICAO */
+    width: 20%;
+    transition: .6s;
+}
+.slide img { /* MOSTRAR IMAGEM INTEIRA */
+    width: 100%;
+    height: 100%;
+}
+#slide1:checked ~ .s1 { /*CONFIGURANDO TRANSICAO DE IMAGEM PARA IMAGEM*/
+    margin-left: 0;
+}
+#slide2:checked ~ .s1 { /*CONFIGURANDO TRANSICAO DE IMAGEM PARA IMAGEM*/
+margin-left: -20%;
+}
+#slide3:checked ~ .s1 { /*CONFIGURANDO TRANSICAO DE IMAGEM PARA IMAGEM*/
+margin-left: -40%;
+}
+#slide4:checked ~ .s1 { /*CONFIGURANDO TRANSICAO DE IMAGEM PARA IMAGEM*/
+margin-left: -60%;
+}
+#slide5:checked ~ .s1 { /*CONFIGURANDO TRANSICAO DE IMAGEM PARA IMAGEM*/
+margin-left: -80%;
+}
+@media (max-widht: 999px){ /* TENTATIVA DE RESPANSIVIDADE*/
+    body {
+        overflow: hidden;
+    }
+    .ancoras{
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+    }
+    .ancoras li {
+        margin-left: 0;
+        opacity: 0;
+    }
+    .menu-mobile{
+        display: block;
+    }
+}
+.ancoras .active {
+    transform: translateX(0);
+}
